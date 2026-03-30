@@ -98,6 +98,14 @@
       width: 100%;
       border-radius: 15px;
       object-fit: cover;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+      cursor: pointer;
+    }
+
+    .images img:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 14px 28px rgba(109, 35, 57, 0.18);
+      filter: saturate(1.05);
     }
 
     .images img:nth-child(1) {
@@ -166,7 +174,7 @@
     <h1>jacky<br>weyh</h1>
     <div class="subtitle">graphic designer</div>
     <div class="about-text">
-      How do people perceive art? Since I've been able to hold a pen in my hand I drew and scribbled on everything. Art is a paramount part of my life and to help people enjoy designs and pause for a minute in a world where everything takes too much time, is what I love doing.
+      How do people perceive art? Since I was able to hold a pen in my hand I drew and scribbled on everything. Art is a paramount part of my life and to help people enjoy designs and pause for a minute in a world where everything takes too much time, is what I love doing.
     </div>
   </div>
 </header>
