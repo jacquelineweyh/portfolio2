@@ -239,9 +239,9 @@
     }
 
     .cv-intro {
-      grid-column: 1 / span 7;
-      max-width: none;
+      grid-column: 1 / span 8;
       background: #ffb7b9;
+      min-height: 320px;
     }
 
     .cv-intro h3,
@@ -274,18 +274,21 @@
     }
 
     .cv-contact {
-      grid-column: 8 / span 5;
+      grid-column: 9 / span 4;
       background: #b6d9ff;
+      min-height: 220px;
     }
 
     .cv-experience {
       grid-column: 1 / span 7;
       background: #f8eee6;
+      min-height: 340px;
     }
 
     .cv-education {
       grid-column: 8 / span 5;
       background: #d9c767;
+      min-height: 340px;
     }
 
     .cv-certificates {
@@ -540,12 +543,32 @@
 
     <div class="cv-block cv-skills">
       <h4>skills</h4>
-      <p>Indesign 85%<br>
-      Photoshop 70%<br>
-      Wordpress 50%<br>
-      Adobe After Effects (still want to learn)<br>
-      Branding 90%<br>
-      English Language: C1 / 90%</p>
+      <div class="skill-list">
+        <div class="skill-item">
+          <div class="skill-head"><span>Indesign</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-head"><span>Photoshop</span><span>70%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-head"><span>Wordpress</span><span>50%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:50%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-head"><span>Adobe After Effects</span><span>learning</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:35%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-head"><span>Branding</span><span>90%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-head"><span>English</span><span>C1</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
