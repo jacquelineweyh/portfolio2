@@ -217,22 +217,29 @@
 
     .cv-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px 40px;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 22px;
     }
 
     .cv-block {
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(109, 35, 57, 0.18);
+      padding: 24px;
+      border-radius: 26px;
+      border: 1px solid rgba(109, 35, 57, 0.12);
+      background: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 10px 30px rgba(109, 35, 57, 0.06);
     }
 
     body.dark-mode .cv-block {
-      border-bottom: 1px solid rgba(248, 238, 230, 0.18);
+      border: 1px solid rgba(248, 238, 230, 0.14);
+      background: rgba(248, 238, 230, 0.06);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
     }
 
     .cv-intro {
-      grid-column: 1 / -1;
-      max-width: 760px;
+      grid-column: span 8;
+      max-width: none;
+      background: #ffb7b9;
     }
 
     .cv-intro h3,
@@ -261,6 +268,46 @@
     .cv-block p {
       margin: 0 0 16px;
       line-height: 1.6;
+    }
+
+    .cv-contact {
+      grid-column: span 4;
+      background: #b6d9ff;
+    }
+
+    .cv-experience {
+      grid-column: span 7;
+      background: #f8eee6;
+    }
+
+    .cv-education {
+      grid-column: span 5;
+      background: #d9c767;
+    }
+
+    .cv-certificates {
+      grid-column: span 4;
+      background: #ffb7b9;
+    }
+
+    .cv-projects {
+      grid-column: span 4;
+      background: #b6d9ff;
+    }
+
+    .cv-skills {
+      grid-column: span 4;
+      background: #f8eee6;
+    }
+
+    body.dark-mode .cv-intro,
+    body.dark-mode .cv-contact,
+    body.dark-mode .cv-experience,
+    body.dark-mode .cv-education,
+    body.dark-mode .cv-certificates,
+    body.dark-mode .cv-projects,
+    body.dark-mode .cv-skills {
+      background: rgba(248, 238, 230, 0.08);
     }
 
     @media (max-width: 900px) {
@@ -384,14 +431,14 @@
       </p>
     </div>
 
-    <div class="cv-block">
+    <div class="cv-block cv-contact">
       <h4>contact</h4>
       <p>Email: jacqueline.weyh@gmx.de<br>
       Date of Birth: June 3rd 1995<br>
       Address: Nikolausberger Weg 80, 37075 Göttingen</p>
     </div>
 
-    <div class="cv-block">
+    <div class="cv-block cv-experience">
       <h4>professional experience</h4>
       <p><strong>2020 – 2025</strong><br>
       Graphic Design &amp; Social Media | Digital Agency Joofy GmbH<br>
@@ -402,7 +449,7 @@
       Graphic design, social media, marketing, photography assistance, and digital image editing</p>
     </div>
 
-    <div class="cv-block">
+    <div class="cv-block cv-education">
       <h4>education</h4>
       <p><strong>2019 – 2023</strong><br>
       Georg-August-University Göttingen<br>
