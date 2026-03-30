@@ -165,6 +165,31 @@
       max-width: 500px;
     }
 
+    .project-label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      line-height: 1;
+      text-transform: lowercase;
+    }
+
+    .label-branding {
+      background: #b6d9ff;
+      color: #6d2339;
+    }
+
+    .label-print {
+      background: #ffb7b9;
+      color: #6d2339;
+    }
+
+    .label-social {
+      background: #d9c767;
+      color: #6d2339;
+    }
+
     .project:nth-child(2) .project-info {
       background: transparent;
       transform: none;
@@ -186,6 +211,58 @@
       font-size: 14px;
     }
 
+    .cv-section {
+      margin-top: 140px;
+    }
+
+    .cv-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px 40px;
+    }
+
+    .cv-block {
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(109, 35, 57, 0.18);
+    }
+
+    body.dark-mode .cv-block {
+      border-bottom: 1px solid rgba(248, 238, 230, 0.18);
+    }
+
+    .cv-intro {
+      grid-column: 1 / -1;
+      max-width: 760px;
+    }
+
+    .cv-intro h3,
+    .cv-block h4 {
+      font-family: 'Cozy';
+      text-transform: lowercase;
+      margin: 0 0 12px;
+      color: var(--accent);
+    }
+
+    .cv-intro h3 {
+      font-size: 42px;
+    }
+
+    .cv-subtitle {
+      font-family: 'Cozy';
+      text-transform: lowercase;
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .cv-block h4 {
+      font-size: 30px;
+    }
+
+    .cv-block p {
+      margin: 0 0 16px;
+      line-height: 1.6;
+    }
+
     @media (max-width: 900px) {
       header {
         grid-template-columns: 1fr;
@@ -202,6 +279,10 @@
 
       .images img:nth-child(1) {
         grid-row: span 1;
+      }
+
+      .cv-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -243,6 +324,7 @@
     </div>
 
     <div class="project-info">
+      <div class="project-label label-branding">branding</div>
       <h3>coffee shop branding</h3>
       <p>Siplicity is a calm organic coffee shop that communicates comfort, balance and a warm atmosphere.</p>
     </div>
@@ -258,6 +340,7 @@
     </div>
 
     <div class="project-info">
+      <div class="project-label label-print">print</div>
       <h3>feminist prints</h3>
       <p>#loveislove #feminism #equality #humanrights</p>
     </div>
@@ -272,8 +355,110 @@
     </div>
 
     <div class="project-info">
+      <div class="project-label label-social">social</div>
       <h3>flyer for children's project</h3>
-      <p>Together with my roommate, I designed a flyer for her charity project Estrella Suyay to raise awareness, stop child work and give them the education they deserve.</p>
+      <p>Together with my roommate we designed a flyer for her charity project Estrella Suyay to raise awareness and stop child work and give them the education they deserve.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cv-section">
+  <div class="projects-title">curriculum vitae</div>
+
+  <div class="cv-grid">
+    <div class="cv-block cv-intro">
+      <h3>jacky weyh</h3>
+      <div class="cv-subtitle">master of arts</div>
+      <p>
+        In my academic, professional, and personal life, I place great importance on communication,
+        a sense of responsibility, and genuine commitment. Creativity accompanies me every day – I love
+        to visualize ideas and explore new approaches.
+      </p>
+      <p>
+        In my previous job, I independently managed and led many projects. Through this, I learned to
+        take responsibility, make decisions, and advance creative processes with both structure and passion.
+      </p>
+      <p>
+        I work conscientiously and with attention to detail, but I also highly value open exchange within a
+        team – because, in my experience, the best ideas are usually created together.
+      </p>
+    </div>
+
+    <div class="cv-block">
+      <h4>contact</h4>
+      <p>Email: jacqueline.weyh@gmx.de<br>
+      Date of Birth: June 3rd 1995<br>
+      Address: Nikolausberger Weg 80, 37075 Göttingen</p>
+    </div>
+
+    <div class="cv-block">
+      <h4>professional experience</h4>
+      <p><strong>2020 – 2025</strong><br>
+      Graphic Design &amp; Social Media | Digital Agency Joofy GmbH<br>
+      Print media, corporate branding, social media content creation &amp; management</p>
+
+      <p><strong>2014 – 2015</strong><br>
+      Media Production | PAC Advertising Agency<br>
+      Graphic design, social media, marketing, photography assistance, and digital image editing</p>
+    </div>
+
+    <div class="cv-block">
+      <h4>education</h4>
+      <p><strong>2019 – 2023</strong><br>
+      Georg-August-University Göttingen<br>
+      Master of Arts, North American Studies<br>
+      Minor: Gender Studies</p>
+
+      <p><strong>2018 – 2019</strong><br>
+      University of Kassel<br>
+      Master of Arts, English and American Studies<br>
+      Minor: Art Studies</p>
+
+      <p><strong>2017</strong><br>
+      Semester Abroad (as part of BA program)<br>
+      Radford University, Virginia, USA</p>
+
+      <p><strong>2015 – 2018</strong><br>
+      University of Kassel<br>
+      Bachelor of Arts, English and American Studies<br>
+      Minor: Art Studies</p>
+
+      <p><strong>2011 – 2014</strong><br>
+      Albert-Schweitzer-School Hofgeismar<br>
+      General University Entrance Qualification (Abitur)</p>
+    </div>
+
+    <div class="cv-block">
+      <h4>seminars &amp; certificates</h4>
+      <p><strong>2021</strong><br>
+      Creativity Techniques | University Göttingen</p>
+
+      <p><strong>2021</strong><br>
+      Media Education | University Göttingen</p>
+
+      <p><strong>2016</strong><br>
+      Public Relations and Communication | University Kassel</p>
+    </div>
+
+    <div class="cv-block">
+      <h4>independent projects</h4>
+      <p><strong>2018 – 2019</strong><br>
+      Course Instructor | Marie-Durant School, Bad Karlshafen<br>
+      Planning and teaching of art classes</p>
+
+      <p><strong>2018</strong><br>
+      Freelance Artist | Art Exhibition on the Fulda<br>
+      Exhibition and sale of acrylic paintings</p>
+    </div>
+
+    <div class="cv-block">
+      <h4>skills</h4>
+      <p>Indesign 85%<br>
+      Photoshop 70%<br>
+      Wordpress 50%<br>
+      Adobe After Effects (still want to learn)<br>
+      Branding 90%<br>
+      English Language: C1 / 90%</p>
     </div>
   </div>
 </section>
