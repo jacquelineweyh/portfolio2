@@ -219,15 +219,17 @@
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
       gap: 22px;
+      align-items: start;
     }
 
     .cv-block {
       padding: 24px;
       border-radius: 26px;
       border: 1px solid rgba(109, 35, 57, 0.12);
-      background: rgba(255, 255, 255, 0.45);
-      backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.55);
       box-shadow: 0 10px 30px rgba(109, 35, 57, 0.06);
+      min-width: 0;
+      overflow-wrap: break-word;
     }
 
     body.dark-mode .cv-block {
@@ -237,17 +239,17 @@
     }
 
     .cv-intro {
-      grid-column: span 8;
+      grid-column: 1 / span 7;
       max-width: none;
       background: #ffb7b9;
     }
 
     .cv-intro h3,
     .cv-block h4 {
-      font-family: 'Cozy';
-      text-transform: lowercase;
-      margin: 0 0 12px;
-      color: var(--accent);
+      font-size: 24px;
+      line-height: 1.05;
+      word-break: normal;
+      overflow-wrap: anywhere;
     }
 
     .cv-intro h3 {
@@ -268,35 +270,36 @@
     .cv-block p {
       margin: 0 0 16px;
       line-height: 1.6;
+      font-size: 16px;
     }
 
     .cv-contact {
-      grid-column: span 4;
+      grid-column: 8 / span 5;
       background: #b6d9ff;
     }
 
     .cv-experience {
-      grid-column: span 7;
+      grid-column: 1 / span 7;
       background: #f8eee6;
     }
 
     .cv-education {
-      grid-column: span 5;
+      grid-column: 8 / span 5;
       background: #d9c767;
     }
 
     .cv-certificates {
-      grid-column: span 4;
+      grid-column: 1 / span 4;
       background: #ffb7b9;
     }
 
     .cv-projects {
-      grid-column: span 4;
+      grid-column: 5 / span 4;
       background: #b6d9ff;
     }
 
     .cv-skills {
-      grid-column: span 4;
+      grid-column: 9 / span 4;
       background: #f8eee6;
     }
 
@@ -330,6 +333,43 @@
 
       .cv-grid {
         grid-template-columns: 1fr;
+      }
+
+      .cv-intro,
+      .cv-contact,
+      .cv-experience,
+      .cv-education,
+      .cv-certificates,
+      .cv-projects,
+      .cv-skills {
+        grid-column: 1;
+      }
+    }
+
+      .project-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .images {
+        grid-template-columns: 1fr;
+      }
+
+      .images img:nth-child(1) {
+        grid-row: span 1;
+      }
+
+      .cv-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cv-intro,
+      .cv-contact,
+      .cv-experience,
+      .cv-education,
+      .cv-certificates,
+      .cv-projects,
+      .cv-skills {
+        grid-column: span 1;
       }
     }
 
@@ -475,7 +515,7 @@
       General University Entrance Qualification (Abitur)</p>
     </div>
 
-    <div class="cv-block">
+    <div class="cv-block cv-certificates">
       <h4>seminars &amp; certificates</h4>
       <p><strong>2021</strong><br>
       Creativity Techniques | University Göttingen</p>
@@ -487,7 +527,7 @@
       Public Relations and Communication | University Kassel</p>
     </div>
 
-    <div class="cv-block">
+    <div class="cv-block cv-projects">
       <h4>independent projects</h4>
       <p><strong>2018 – 2019</strong><br>
       Course Instructor | Marie-Durant School, Bad Karlshafen<br>
@@ -498,7 +538,7 @@
       Exhibition and sale of acrylic paintings</p>
     </div>
 
-    <div class="cv-block">
+    <div class="cv-block cv-skills">
       <h4>skills</h4>
       <p>Indesign 85%<br>
       Photoshop 70%<br>
