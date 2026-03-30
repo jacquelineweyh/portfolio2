@@ -5,6 +5,23 @@
   <title>Jacky Weyh Portfolio</title>
 
   <style>
+    :root {
+      --bg: #f8eee6;
+      --text: #6d2339;
+      --accent: #f9450e;
+      --line: #d9c767;
+      --button-bg: #6d2339;
+      --button-text: #f8eee6;
+    }
+
+    body.dark-mode {
+      --bg: #1c1412;
+      --text: #f8eee6;
+      --accent: #ffb7b9;
+      --line: #b6d9ff;
+      --button-bg: #f8eee6;
+      --button-text: #6d2339;
+    }
     @font-face {
       font-family: 'Cozy';
       src: url('CozyBlanket.otf');
@@ -17,9 +34,10 @@
 
     body {
       margin: 0;
-      background: #f8eee6;
-      color: #6d2339;
+      background: var(--bg);
+      color: var(--text);
       font-family: 'Recoleta', serif;
+      transition: background 0.35s ease, color 0.35s ease;
     }
 
     .container {
@@ -37,16 +55,18 @@
     }
 
     .profile-wrapper {
-      background: #b6d9ff;
-      padding: 20px;
-      border-radius: 30px;
-      transform: rotate(-2deg);
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      transform: none;
     }
 
     .profile-img {
       width: 100%;
-      border-radius: 20px;
+      border-radius: 6px;
       display: block;
+      filter: contrast(1.05) saturate(0.95);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     }
 
     h1 {
@@ -54,14 +74,38 @@
       font-size: 80px;
       margin: 0;
       line-height: 0.9;
-      color: #f9450e;
+      color: var(--accent);
     }
 
     .subtitle {
       margin-top: 10px;
-      font-size: 18px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      font-family: 'Cozy';
+      text-transform: lowercase;
+      color: var(--accent);
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 30px;
+    }
+
+    .mode-toggle {
+      border: 1px solid var(--text);
+      background: var(--button-bg);
+      color: var(--button-text);
+      font-family: 'Recoleta', serif;
+      font-size: 14px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .mode-toggle:hover {
+      transform: translateY(-1px);
     }
 
     .about-text {
@@ -73,7 +117,7 @@
       font-family: 'Cozy';
       font-size: 50px;
       margin-bottom: 60px;
-      color: #f9450e;
+      color: var(--accent);
     }
 
     .project {
@@ -82,9 +126,8 @@
 
     .project-layout {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 40px;
-      align-items: center;
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
 
     .images {
@@ -113,27 +156,29 @@
     }
 
     .project-info {
-      background: #ffb7b9;
-      padding: 25px;
-      border-radius: 20px;
-      transform: rotate(1deg);
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      transform: none;
+      max-width: 500px;
     }
 
     .project:nth-child(2) .project-info {
-      background: #b6d9ff;
-      transform: rotate(-1deg);
+      background: transparent;
+      transform: none;
     }
 
     .project-info h3 {
       font-family: 'Cozy';
-      font-size: 30px;
+      font-size: 42px;
       margin: 0 0 10px;
+      text-transform: lowercase;
     }
 
     footer {
       margin-top: 120px;
       padding-top: 40px;
-      border-top: 2px solid #d9c767;
+      border-top: 2px solid var(--line);
       display: flex;
       justify-content: space-between;
       font-size: 14px;
@@ -165,7 +210,11 @@
 
 <div class="container">
 
-<header>
+<div class="top-bar">
+    <button class="mode-toggle" onclick="toggleDarkMode()">dark mode</button>
+  </div>
+
+  <header>
   <div class="profile-wrapper">
     <img src="profile.jpg" class="profile-img">
   </div>
@@ -224,6 +273,14 @@
 </footer>
 
 </div>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const button = document.querySelector('.mode-toggle');
+    button.textContent = document.body.classList.contains('dark-mode') ? 'light mode' : 'dark mode';
+  }
+</script>
 
 </body>
 </html>
