@@ -22,6 +22,7 @@
       --button-bg: #f8eee6;
       --button-text: #6d2339;
     }
+
     @font-face {
       font-family: 'Cozy';
       src: url('CozyBlanket.otf');
@@ -44,6 +45,28 @@
       max-width: 1200px;
       margin: auto;
       padding: 40px 20px;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 30px;
+    }
+
+    .mode-toggle {
+      border: 1px solid var(--text);
+      background: var(--button-bg);
+      color: var(--button-text);
+      font-family: 'Recoleta', serif;
+      font-size: 14px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .mode-toggle:hover {
+      transform: translateY(-1px);
     }
 
     header {
@@ -75,6 +98,7 @@
       margin: 0;
       line-height: 0.9;
       color: var(--accent);
+      text-transform: lowercase;
     }
 
     .subtitle {
@@ -86,31 +110,10 @@
       color: var(--accent);
     }
 
-    .top-bar {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 30px;
-    }
-
-    .mode-toggle {
-      border: 1px solid var(--text);
-      background: var(--button-bg);
-      color: var(--button-text);
-      font-family: 'Recoleta', serif;
-      font-size: 14px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .mode-toggle:hover {
-      transform: translateY(-1px);
-    }
-
     .about-text {
       margin-top: 20px;
       line-height: 1.6;
+      font-size: 17px;
     }
 
     .projects-title {
@@ -118,6 +121,7 @@
       font-size: 50px;
       margin-bottom: 60px;
       color: var(--accent);
+      text-transform: lowercase;
     }
 
     .project {
@@ -125,9 +129,7 @@
     }
 
     .project-layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
+      display: block;
     }
 
     .images {
@@ -144,10 +146,12 @@
 
     .images img {
       width: 100%;
+      height: 100%;
       border-radius: 15px;
       object-fit: cover;
       transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
       cursor: pointer;
+      display: block;
     }
 
     .images img:hover {
@@ -156,13 +160,23 @@
       filter: saturate(1.05);
     }
 
-    .images img:nth-child(1) {
+    .images:not(.images-2) img:nth-child(1) {
       grid-row: span 2;
+      min-height: 520px;
+    }
+
+    .images:not(.images-2) img:nth-child(2),
+    .images:not(.images-2) img:nth-child(3) {
+      min-height: 255px;
+    }
+
+    .images-2 img {
+      min-height: 320px;
     }
 
     .project-info {
       margin-top: 30px;
-      max-width: 500px;
+      max-width: 720px;
     }
 
     .project-label {
@@ -190,25 +204,18 @@
       color: #6d2339;
     }
 
-    .project:nth-child(2) .project-info {
-      background: transparent;
-      transform: none;
-    }
-
     .project-info h3 {
       font-family: 'Cozy';
       font-size: 42px;
       margin: 0 0 10px;
       text-transform: lowercase;
+      color: var(--text);
     }
 
-    footer {
-      margin-top: 120px;
-      padding-top: 40px;
-      border-top: 2px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
+    .project-info p {
+      margin: 0;
+      line-height: 1.6;
+      font-size: 16px;
     }
 
     .cv-section {
@@ -217,94 +224,26 @@
 
     .cv-grid {
       display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 22px;
       align-items: start;
     }
 
     .cv-block {
       padding: 24px;
-      border-radius: 26px;
-      border: 1px solid rgba(109, 35, 57, 0.12);
-      background: rgba(255, 255, 255, 0.55);
-      box-shadow: 0 10px 30px rgba(109, 35, 57, 0.06);
+      border-radius: 22px;
       min-width: 0;
       overflow-wrap: break-word;
+      box-sizing: border-box;
     }
 
-    body.dark-mode .cv-block {
-      border: 1px solid rgba(248, 238, 230, 0.14);
-      background: rgba(248, 238, 230, 0.06);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-    }
-
-    .cv-intro {
-      grid-column: 1 / span 8;
-      background: #ffb7b9;
-      min-height: 320px;
-    }
-
-    .cv-intro h3,
-    .cv-block h4 {
-      font-size: 24px;
-      line-height: 1.05;
-      word-break: normal;
-      overflow-wrap: anywhere;
-    }
-
-    .cv-intro h3 {
-      font-size: 42px;
-    }
-
-    .cv-subtitle {
-      font-family: 'Cozy';
-      text-transform: lowercase;
-      font-size: 24px;
-      margin-bottom: 18px;
-    }
-
-    .cv-block h4 {
-      font-size: 30px;
-    }
-
-    .cv-block p {
-      margin: 0 0 16px;
-      line-height: 1.6;
-      font-size: 16px;
-    }
-
-    .cv-contact {
-      grid-column: 9 / span 4;
-      background: #b6d9ff;
-      min-height: 220px;
-    }
-
-    .cv-experience {
-      grid-column: 1 / span 7;
-      background: #f8eee6;
-      min-height: 340px;
-    }
-
-    .cv-education {
-      grid-column: 8 / span 5;
-      background: #d9c767;
-      min-height: 340px;
-    }
-
-    .cv-certificates {
-      grid-column: 1 / span 4;
-      background: #ffb7b9;
-    }
-
-    .cv-projects {
-      grid-column: 5 / span 4;
-      background: #b6d9ff;
-    }
-
-    .cv-skills {
-      grid-column: 9 / span 4;
-      background: #f8eee6;
-    }
+    .cv-intro { background: #ffb7b9; }
+    .cv-contact { background: #b6d9ff; }
+    .cv-experience { background: #f8eee6; border: 1px solid rgba(109,35,57,0.12); }
+    .cv-education { background: #d9c767; }
+    .cv-certificates { background: #ffb7b9; }
+    .cv-projects { background: #b6d9ff; }
+    .cv-skills { background: #f8eee6; border: 1px solid rgba(109,35,57,0.12); }
 
     body.dark-mode .cv-intro,
     body.dark-mode .cv-contact,
@@ -314,6 +253,81 @@
     body.dark-mode .cv-projects,
     body.dark-mode .cv-skills {
       background: rgba(248, 238, 230, 0.08);
+      border: 1px solid rgba(248,238,230,0.12);
+    }
+
+    .cv-intro h3,
+    .cv-block h4 {
+      font-family: 'Cozy';
+      text-transform: lowercase;
+      margin: 0 0 12px;
+      color: var(--accent);
+      line-height: 1.05;
+    }
+
+    .cv-intro h3 { font-size: 42px; }
+    .cv-subtitle {
+      font-family: 'Cozy';
+      text-transform: lowercase;
+      font-size: 24px;
+      margin-bottom: 18px;
+      color: var(--text);
+    }
+
+    .cv-block h4 { font-size: 28px; }
+
+    .cv-block p {
+      margin: 0 0 16px;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .skill-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .skill-item {
+      display: grid;
+      gap: 6px;
+    }
+
+    .skill-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 15px;
+      line-height: 1.3;
+    }
+
+    .skill-bar {
+      width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(109, 35, 57, 0.12);
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    body.dark-mode .skill-bar {
+      background: rgba(248, 238, 230, 0.14);
+    }
+
+    footer {
+      margin-top: 120px;
+      padding-top: 40px;
+      border-top: 2px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      gap: 20px;
     }
 
     @media (max-width: 900px) {
@@ -322,60 +336,27 @@
         text-align: center;
       }
 
-      .project-layout {
+      .images,
+      .images-2 {
         grid-template-columns: 1fr;
+        grid-template-rows: auto;
       }
 
-      .images {
-        grid-template-columns: 1fr;
-      }
-
-      .images img:nth-child(1) {
-        grid-row: span 1;
+      .images:not(.images-2) img:nth-child(1),
+      .images:not(.images-2) img:nth-child(2),
+      .images:not(.images-2) img:nth-child(3),
+      .images-2 img {
+        min-height: auto;
       }
 
       .cv-grid {
         grid-template-columns: 1fr;
       }
 
-      .cv-intro,
-      .cv-contact,
-      .cv-experience,
-      .cv-education,
-      .cv-certificates,
-      .cv-projects,
-      .cv-skills {
-        grid-column: 1;
+      footer {
+        flex-direction: column;
       }
     }
-
-      .project-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .images {
-        grid-template-columns: 1fr;
-      }
-
-      .images img:nth-child(1) {
-        grid-row: span 1;
-      }
-
-      .cv-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .cv-intro,
-      .cv-contact,
-      .cv-experience,
-      .cv-education,
-      .cv-certificates,
-      .cv-projects,
-      .cv-skills {
-        grid-column: span 1;
-      }
-    }
-
   </style>
 </head>
 
